@@ -1,6 +1,9 @@
 # 🚀 Primetrade.ai - Internship Assignment
 > **Scalable REST API & "Apexify" Data Dashboard**
 
+![Dashboard Preview](dashboard_preview.png)
+*Snapshot of the Dashboard*
+
 This project is a complete Full Stack application built as part of the backend developer internship assignment. It features secure JWT authentication, role-based access control (RBAC), and a **Modern Dark-Themed Dashboard** inspired by "Apexify".
 
 ---
