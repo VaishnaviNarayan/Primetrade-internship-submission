@@ -1,34 +1,26 @@
-# 🚀 MERN Stack Internship Assignment
-> **Scalable REST API with Authentication & React Frontend**
+# 🚀 Primetrade.ai - Internship Assignment
+> **Scalable REST API & "Apexify" Data Dashboard**
 
-This project is a complete Full Stack application built as part of the backend developer internship assignment. It features secure JWT authentication, role-based access control (RBAC), and a responsive React frontend.
+This project is a complete Full Stack application built as part of the backend developer internship assignment. It features secure JWT authentication, role-based access control (RBAC), and a **Modern Dark-Themed Dashboard** inspired by "Apexify".
+
+---
+
+## 🎨 Key Features
+*   **Secure Authentication:** JWT-based login with BCrypt password hashing.
+*   **Role-Based Access:** Admin-only features for product/bot management.
+*   **Modern UI (Apexify Theme):**
+    *   **Dark Mode:** Professional fintech aesthetic (`#111827` background).
+    *   **Interactive Sidebar:** Functional navigation switching between Dashboard, Sales, Products, etc.
+    *   **Data Visualization:** Area charts, progress bars, and transaction tables.
+*   **Responsive Layout:** Flexbox architecture adapting to screen sizes.
 
 ---
 
 ## 🛠️ Tech Stack
 *   **Backend:** Node.js, Express.js
 *   **Database:** MongoDB Atlas (Cloud)
-*   **Frontend:** React.js (Vite)
-*   **Authentication:** JSON Web Tokens (JWT) & BCrypt
-
----
-
-## 📂 Project Structure
-```
-/project4
-├── /backend          # Node.js API Logic (The Kitchen)
-│   ├── /config       # Database Connection
-│   ├── /controllers  # Logic for Users & Products
-│   ├── /middleware   # Auth & Admin Security
-│   ├── /models       # Database Schemas (User, Product)
-│   └── /routes       # API Endpoints
-│
-├── /frontend         # React.js UI (The Waiter)
-│   ├── /src/pages    # Login & Dashboard Screens
-│   └── App.jsx       # Routing
-│
-└── .env              # Environment Variables (Secrets)
-```
+*   **Frontend:** React.js (Vite), Recharts, React Icons
+*   **Styling:** CSS Modules, Google Fonts (Outfit)
 
 ---
 
@@ -54,9 +46,26 @@ cd frontend
 # Install dependencies
 npm install
 
-# Start the React App (Runs on Port 5173)
-npm run dev
+# Start the React App (Strictly on Port 5175)
+npm run dev -- --port 5175
 ```
+> **Note:** Access the frontend at `http://localhost:5175`
+
+---
+
+## 📚 Documentation & Deliverables
+
+*   **[Scalability Note (scalability.md)](./scalability.md):** Explanation of Microservices, Caching (Redis), and Load Balancing strategies used to scale this app.
+*   **API Documentation:** See the table below for available endpoints.
+
+### 🔌 API Endpoints
+
+| Method | Endpoint | Description | Access |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/users` | Register a new user | Public |
+| `POST` | `/api/users/login` | Login user & get Token | Public |
+| `GET` | `/api/products` | Get all bots/products | Public |
+| `POST` | `/api/products` | Create a bot entry | **Admin Only** |
 
 ---
 
@@ -70,25 +79,6 @@ JWT_SECRET=your_secret_key
 
 ---
 
-## 🔌 API Endpoints
-
-| Method | Endpoint | Description | Access |
-| :--- | :--- | :--- | :--- |
-| `POST` | `/api/users` | Register a new user | Public |
-| `POST` | `/api/users/login` | Login user & get Token | Public |
-| `GET` | `/api/products` | Get all products | Public |
-| `POST` | `/api/products` | Create a product | **Admin Only** |
-| `DELETE` | `/api/products/:id` | Delete a product | **Admin Only** |
-
----
-
-## 🧪 How to Test
-1.  **Register:** You can register a user via Postman or the API.
-2.  **Login:** Use the Frontend Login page.
-3.  **Admin:** To test Admin features, ensure your user has `role: "admin"` in the database.
-
----
-
 ## 📝 Author
-*   **Name:** [Your Name]
-*   **Submission for:** Backend Developer Internship
+*   **Vaishnavi**
+*   **Submission for:** Primetrade.ai Backend Developer Internship
