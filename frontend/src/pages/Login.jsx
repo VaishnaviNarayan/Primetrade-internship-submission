@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { FaUser, FaLock } from 'react-icons/fa'; // Importing Icons
 
 const Login = () => {
@@ -66,7 +66,7 @@ const Login = () => {
                 </form>
 
                 <p style={{ marginTop: '20px', fontSize: '14px', opacity: 0.8 }}>
-                    Don't have an Account? <strong style={{ cursor: 'pointer' }}>Register</strong>
+                    Don't have an Account? <Link to="/register" style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }}>Register</Link>
                 </p>
             </div>
         </div>

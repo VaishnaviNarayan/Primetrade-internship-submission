@@ -47,7 +47,7 @@ const Dashboard = () => {
     return (
         <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#0b0e14', fontFamily: "'Outfit', sans-serif" }}>
             {/* Sidebar - Fixed Width */}
-            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={handleLogout} />
+            <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={handleLogout} user={user} />
 
             {/* Main Content Area - Responsive Margin for Sidebar */}
             <div style={{
@@ -69,8 +69,8 @@ const Dashboard = () => {
                         </div>
                         <div style={{ background: '#1f2937', padding: '10px', borderRadius: '50%', cursor: 'pointer' }}><FaBell /></div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#1f2937', padding: '6px 15px', borderRadius: '30px' }}>
-                            <div style={{ width: '28px', height: '28px', background: '#8b5cf6', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>V</div>
-                            <span style={{ fontSize: '14px', fontWeight: '500' }}>Vaishnavi</span>
+                            <div style={{ width: '28px', height: '28px', background: '#8b5cf6', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>{user?.name?.charAt(0).toUpperCase() || 'U'}</div>
+                            <span style={{ fontSize: '14px', fontWeight: '500' }}>{user?.name || 'User'}</span>
                         </div>
                     </div>
                 </div>

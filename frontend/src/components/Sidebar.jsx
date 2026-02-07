@@ -9,15 +9,21 @@ import {
     FaSignOutAlt
 } from 'react-icons/fa';
 
-const Sidebar = ({ activeTab, setActiveTab, onLogout }) => {
-    const menuItems = [
-        { id: 'dashboard', label: 'Dashboard', icon: <FaThLarge /> },
-        { id: 'sales', label: 'Sales', icon: <FaShoppingBag /> },
-        { id: 'analytics', label: 'Analytics', icon: <FaChartPie /> },
-        { id: 'products', label: 'Products', icon: <FaBoxOpen /> },
-        { id: 'visitors', label: 'Visitors', icon: <FaUserFriends /> },
-        { id: 'shipment', label: 'Shipment', icon: <FaTruck /> },
+const Sidebar = ({ activeTab, setActiveTab, onLogout, user }) => {
+    // Define all available items
+    const allMenuItems = [
+        { id: 'dashboard', label: 'Dashboard', icon: <FaThLarge />, roles: ['user', 'admin'] },
+        { id: 'sales', label: 'Sales', icon: <FaShoppingBag />, roles: ['user', 'admin'] },
+        { id: 'analytics', label: 'Analytics', icon: <FaChartPie />, roles: ['admin'] }, // Admin Only
+        { id: 'products', label: 'Products', icon: <FaBoxOpen />, roles: ['admin'] },   // Admin Only
+        { id: 'visitors', label: 'Visitors', icon: <FaUserFriends />, roles: ['admin'] },
+        { id: 'shipment', label: 'Shipment', icon: <FaTruck />, roles: ['user', 'admin'] },
     ];
+
+    // Filter items based on the user's role
+    const menuItems = allMenuItems.filter(item =>
+        user && item.roles.includes(user.role)
+    );
 
     return (
         <div style={{
